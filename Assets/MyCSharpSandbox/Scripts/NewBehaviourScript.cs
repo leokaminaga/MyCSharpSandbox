@@ -11,17 +11,14 @@ namespace Assets.MyCSharpSandbox.Scripts
 
         private void Start()
         {
-            var list = new List<string>();
+            Func<int, int, int> func = (int i, int i1) => { return i + i1;};
             
-            list.Add("hoge");
-
-            var result = list.Select(s => s + ".txt" );
-            
+            Debug.Log(func(1,2));
         }
 
-        private static string Append(string s)
+        static int Calc(int hoge, int fuga)
         {
-            return s + ".txt";
+            return hoge + fuga;
         }
     }
 
