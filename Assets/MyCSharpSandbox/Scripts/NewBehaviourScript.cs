@@ -8,17 +8,26 @@ namespace Assets.MyCSharpSandbox.Scripts
 {
     public class NewBehaviourScript : MonoBehaviour
     {
+        private delegate void SomeDelegate(int a);
 
         private void Start()
         {
-            Func<int, int, int> func = (int i, int i1) => { return i + i1;};
-            
-            Debug.Log(func(1,2));
+            SomeDelegate 
+                a = A;
+                a += B;
+                
+            a(256);
+           
         }
 
-        static int Calc(int hoge, int fuga)
+        private static void A(int hoge)
         {
-            return hoge + fuga;
+            Debug.Log($"A({hoge})が呼ばれました");
+        }
+
+        private static void B(int fuga)
+        {
+            Debug.Log($"B({fuga})が呼ばれました");
         }
     }
 
