@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.MyCSharpSandbox.Scripts
@@ -10,22 +11,19 @@ namespace Assets.MyCSharpSandbox.Scripts
 
         private void Start()
         {
-            Calculator.IntToInt addOne = Calculator.AddOne;
+            var list = new List<string>();
+            
+            list.Add("hoge");
+
+            var result = list.Select(s => s + ".txt" );
+            
+        }
+
+        private static string Append(string s)
+        {
+            return s + ".txt";
         }
     }
 
-    public class Calculator
-    {
-        public delegate int IntToInt(int value);
-
-        public static int AddOne(int value)
-        {
-            return value + 1;
-        }
-
-        public static int GetLength(string value)
-        {
-            return value.Length;
-        }
-    }
+    
 }
