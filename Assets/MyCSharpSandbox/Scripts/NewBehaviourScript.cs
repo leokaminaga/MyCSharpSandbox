@@ -12,12 +12,11 @@ namespace Assets.MyCSharpSandbox.Scripts
 
         private void Start()
         {
-            SomeDelegate 
-                a = A;
-                a += B;
-                
+            SomeDelegate
+                a = delegate(int i) { Debug.Log($"A({i})が呼ばれました"); };
+                a += i => Debug.Log($"B({i})が呼ばれました");
+
             a(256);
-           
         }
 
         private static void A(int hoge)
@@ -30,6 +29,4 @@ namespace Assets.MyCSharpSandbox.Scripts
             Debug.Log($"B({fuga})が呼ばれました");
         }
     }
-
-    
 }
