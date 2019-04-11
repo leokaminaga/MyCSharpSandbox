@@ -1,18 +1,31 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace Assets.MyCSharpSandbox.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class NewBehaviourScript : MonoBehaviour
     {
-        
+
+        private void Start()
+        {
+            Calculator.IntToInt addOne = Calculator.AddOne;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public class Calculator
     {
-        
+        public delegate int IntToInt(int value);
+
+        public static int AddOne(int value)
+        {
+            return value + 1;
+        }
+
+        public static int GetLength(string value)
+        {
+            return value.Length;
+        }
     }
 }
