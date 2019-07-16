@@ -1,2 +1,2 @@
 # MyCSharpSandbox
-C#勉強のためにいじまわす用
+C#勉強のためにいじまわす用のUnityプロジェクト
