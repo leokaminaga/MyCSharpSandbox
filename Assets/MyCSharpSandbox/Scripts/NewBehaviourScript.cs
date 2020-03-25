@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.MyCSharpSandbox.Scripts
+namespace MyCSharpSandbox.Scripts
 {
     public class NewBehaviourScript : MonoBehaviour
     {
@@ -17,6 +13,8 @@ namespace Assets.MyCSharpSandbox.Scripts
                 a += i => Debug.Log($"B({i})が呼ばれました");
 
             a(256);
+
+            Increments();
         }
 
         private static void A(int hoge)
@@ -27,6 +25,21 @@ namespace Assets.MyCSharpSandbox.Scripts
         private static void B(int fuga)
         {
             Debug.Log($"B({fuga})が呼ばれました");
+        }
+
+        private static void Increments()
+        {
+            var num = 0;
+            if (num++ == 0)
+            {
+                // ここが呼ばれるにもかかわらずnumは１になる。つまり, ==0後に加算されている
+                Debug.Log("変数numは0");
+            }
+            else
+            {
+                Debug.Log("変数numは!0");
+            }
+            Debug.Log("変数numは"+num);
         }
     }
 }
